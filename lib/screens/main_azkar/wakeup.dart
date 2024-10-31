@@ -1,3 +1,4 @@
+import 'package:azkar/Classes/day_and_date.dart';
 import 'package:azkar/custom/page_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,44 +37,19 @@ class _WakeupState extends State<Wakeup> {
           child: Column(
             children: [
               // UPPER Part
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
-                      color: Colors.grey[800]),
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        DateFormat('dd/MM/yyyy').format(DateTime.now()),
-                        style: commonTextStyle,
-                      ),
-                      Text(
-                        DateFormat('EEEE', 'ar').format(DateTime.now()),
-                        style: commonTextStyle,
-                      ),
-                      Text(
-                        HijriCalendar.now().toFormat('mm/dd/yyyy'),
-                        style: commonTextStyle,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-          
+              const UpperPart(),
+
               // Main Part
               Expanded(
                 child: PageView(
                   controller: _pageController,
                   scrollDirection: Axis.vertical,
                   children: <Widget>[
-                    Screen(1, _pageController, false,
+                    Screen(1, _pageController, false,false,
                         'الحَمْدُ لِلَّهِ الذي أحْيَانَا بَعْدَ ما أمَاتَنَا، وإلَيْهِ النُّشُورُ'),
-                    Screen(2, _pageController, false,
+                    Screen(2, _pageController, false,false,
                         ' الحمدُ للهِ الذي عافانِى في جَسَدِي ، ورَدَّ عَلَيَّ رُوحِي ، وأَذِنَ لي بذِكْرِه'),
-                    Screen(3, _pageController, false,
+                    Screen(3, _pageController, false,false,
                         'لا إلَهَ إلَّا اللَّهُ وحْدَهُ لا شَرِيكَ له، له المُلْكُ وله الحَمْدُ، وهو علَى كُلِّ شيءٍ قَديرٌ، الحَمْدُ لِلَّهِ، وسُبْحَانَ اللَّهِ، ولَا إلَهَ إلَّا اللَّهُ، واللَّهُ أَكْبَرُ، ولَا حَوْلَ ولَا قُوَّةَ إلَّا باللَّهِ. (ادعي بما تشاء)'),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -150,8 +126,3 @@ class _WakeupState extends State<Wakeup> {
     );
   }
 }
-
-const TextStyle commonTextStyle = TextStyle(
-  fontSize: 20,
-  color: Colors.white,
-);
