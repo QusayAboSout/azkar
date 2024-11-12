@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran/quran.dart';
 
-
 class Wakeup extends StatefulWidget {
   const Wakeup({super.key});
   @override
@@ -40,11 +39,11 @@ class _WakeupState extends State<Wakeup> {
                   controller: _pageController,
                   scrollDirection: Axis.vertical,
                   children: [
-                    Screen(1, _pageController, false,false,
+                    Screen(1, _pageController, false, false, false, 0,
                         'الحَمْدُ لِلَّهِ الذي أحْيَانَا بَعْدَ ما أمَاتَنَا، وإلَيْهِ النُّشُورُ'),
-                    Screen(2, _pageController, false,false,
+                    Screen(2, _pageController, false, false, false, 0,
                         ' الحمدُ للهِ الذي عافانِى في جَسَدِي ، ورَدَّ عَلَيَّ رُوحِي ، وأَذِنَ لي بذِكْرِه'),
-                    Screen(3, _pageController, false,false,
+                    Screen(3, _pageController, false, false, false, 0,
                         'لا إلَهَ إلَّا اللَّهُ وحْدَهُ لا شَرِيكَ له، له المُلْكُ وله الحَمْدُ، وهو علَى كُلِّ شيءٍ قَديرٌ، الحَمْدُ لِلَّهِ، وسُبْحَانَ اللَّهِ، ولَا إلَهَ إلَّا اللَّهُ، واللَّهُ أَكْبَرُ، ولَا حَوْلَ ولَا قُوَّةَ إلَّا باللَّهِ. (ادعي بما تشاء)'),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
