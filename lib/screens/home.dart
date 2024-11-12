@@ -1,9 +1,18 @@
+import 'package:azkar/custom/colors.dart';
 import 'package:azkar/custom/large_button.dart';
 import 'package:azkar/screens/main_azkar/sabah.dart';
-import 'package:azkar/screens/main_azkar/sleep.dart';
 import 'package:azkar/screens/main_azkar/wakeup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+class PagesCount{
+  static final PagesCount _instance = PagesCount._internal();
+  int maxPages = 0; // Default value
+  factory PagesCount() {
+    return _instance;
+  }
+  PagesCount._internal();
+}
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,7 +21,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('أذكاري',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.amber),),
+          title: const Text('أذكاري',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.lightGreen),),
           
           centerTitle: true,
         ),
@@ -27,6 +36,7 @@ class Home extends StatelessWidget {
               tag: 'wakeup',
               child: LargeButton(
                 text: 'أذكار الاستيقاظ من النوم',
+                color: const Color.fromARGB(216, 238, 238, 238),
                 imageUrl: 'assets/images/wakeup.png',
                 onTap: (){
                   Get.to(() => const Wakeup());
@@ -39,7 +49,7 @@ class Home extends StatelessWidget {
                 text: 'أذكار الصباح',
                 imageUrl: 'assets/images/sabah.png',
                 onTap: (){
-                  Get.to(const Sabah());
+                  Get.to(()=> const Sabah());
                 },
                 color: const Color.fromARGB(255, 0, 0, 0),
                            ),
@@ -59,6 +69,7 @@ class Home extends StatelessWidget {
               tag: 'sleep',
               child: LargeButton(
                 text: 'أذكار النوم',
+                color: const Color.fromARGB(216, 238, 238, 238),
                 imageUrl: 'assets/images/sleep.jpg',
                 onTap: (){
                   print('See you');

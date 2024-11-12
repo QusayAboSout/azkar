@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:azkar/custom/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:quran/page_data.dart';
 import 'package:quran/quran.dart';
 
 class Screen extends StatefulWidget {
@@ -13,6 +11,7 @@ class Screen extends StatefulWidget {
   bool isSurah = false;
   final String _text;
   bool isAya = false;
+
   @override
   State<Screen> createState() => _ScreenState();
 }
@@ -20,54 +19,62 @@ class Screen extends StatefulWidget {
 class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
-    int fsize;
-    if (widget.isSurah) {
-      fsize = 30;
-      return const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-          ));
-    } else {
-      fsize = 25;
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-          child: Material(
-            color: Colors.transparent,
-            child: Container(
-              color: Colors.grey[800],
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    upperBody(widget.pageNumber), // Reusable upper body section
-                    ///////////////////////////////////////////////
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        widget._text,
-                        style: const TextStyle(fontSize: 30),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    /////////////////////////////////////////////////
-                    lowerBody(
-                        goToNextPage), // Reusable lower body section with button
-                  ],
-                ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        child: Material(
+          color: Colors.transparent,
+          child: Container(
+            color: Colors.grey[800],
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  upperBody(widget.pageNumber), // Reusable upper body section
+                  ///////////////////////////////////////////////
+                  if (widget.isAya)
+                    Column(
+                      children: [
+                        const Text(
+                          'أعوذ بالله من الشيطان الرجيم',
+                          style: TextStyle(
+                              fontSize: 20, color: AppColors.lightGreen),
+                        ),
+                        TheMainText(widget._text),
+                      ],
+                    )
+                  else if (widget.isSurah)
+                    Column(
+                      children: [
+                        const Text(
+                          basmala,
+                          style: TextStyle(
+                              fontSize: 20, color: AppColors.lightGreen),
+                        ),
+                        TheMainText(widget._text),
+                        const Text('ثلاث مرات',
+                            style: TextStyle(
+                                fontSize: 20, color: AppColors.lightGreen))
+                      ],
+                    )
+                  else
+                    TheMainText(widget._text),
+                  /////////////////////////////////////////////////
+                  lowerBody(
+                      goToNextPage), // Reusable lower body section with button
+                ],
               ),
             ),
           ),
         ),
-      );
-    }
+      ),
+    );
   }
 
   Widget upperBody(int pageNumber) {
     return Container(
-      color: Colors.grey[600],
+      color: const Color.fromARGB(185, 196, 218, 210),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -90,6 +97,7 @@ class _ScreenState extends State<Screen> {
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: IconButton(
+        color: const Color.fromARGB(185, 196, 218, 210),
         iconSize: 30,
         onPressed: () {
           goToNextPage();
@@ -107,4 +115,16 @@ class _ScreenState extends State<Screen> {
       );
     }
   }
+}
+
+Widget TheMainText(String text) {
+  return Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Text(
+      text,
+      style: const TextStyle(
+          fontSize: 30, color: Color.fromRGBO(207, 231, 222, 1),height: 1.3),
+      textAlign: TextAlign.center,
+    ),
+  );
 }

@@ -1,17 +1,12 @@
 import 'package:azkar/Classes/day_and_date.dart';
 import 'package:azkar/custom/page_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hijri/hijri_calendar.dart';
-import 'package:intl/date_symbol_data_file.dart';
-import 'package:intl/intl.dart';
 import 'package:quran/quran.dart';
+
 
 class Wakeup extends StatefulWidget {
   const Wakeup({super.key});
-
   @override
   State<Wakeup> createState() => _WakeupState();
 }
@@ -44,7 +39,7 @@ class _WakeupState extends State<Wakeup> {
                 child: PageView(
                   controller: _pageController,
                   scrollDirection: Axis.vertical,
-                  children: <Widget>[
+                  children: [
                     Screen(1, _pageController, false,false,
                         'الحَمْدُ لِلَّهِ الذي أحْيَانَا بَعْدَ ما أمَاتَنَا، وإلَيْهِ النُّشُورُ'),
                     Screen(2, _pageController, false,false,
