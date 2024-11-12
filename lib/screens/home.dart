@@ -1,5 +1,6 @@
 import 'package:azkar/custom/colors.dart';
 import 'package:azkar/custom/large_button.dart';
+import 'package:azkar/screens/main_azkar/masa.dart';
 import 'package:azkar/screens/main_azkar/sabah.dart';
 import 'package:azkar/screens/main_azkar/wakeup.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class Home extends StatelessWidget {
                 text: 'أذكار المساء',
                 imageUrl: 'assets/images/masa.png',
                 onTap: (){
-                  print('Are you OK');
+                  Get.to(() => const Masa());
                 },
                 color: Colors.black,
                            ),
