@@ -1,5 +1,8 @@
+import 'package:azkar/controllers/pageview_controller.dart';
 import 'package:azkar/custom/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:quran/quran.dart';
 
 class Screen extends StatefulWidget {
@@ -19,6 +22,7 @@ class Screen extends StatefulWidget {
 }
 
 class _ScreenState extends State<Screen> {
+  final PageviewController controller = Get.find<PageviewController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,56 +38,80 @@ class _ScreenState extends State<Screen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   upperBody(widget.pageNumber), // Reusable upper body section
-                  ///////////////////////////////////////////////
-                  if (widget.isAya)
-                    Column(
-                      children: [
-                        Text('أعوذ بالله من الشيطان الرجيم',
-                            style: CustomTextStyle()),
-                        TheMainText(widget._text),
-                      ],
-                    )
-                  else if (widget.isSurah)
-                    Column(
-                      children: [
-                        const Text(
-                          basmala,
-                          style: TextStyle(
-                              fontSize: 20, color: AppColors.lightGreen),
-                        ),
-                        TheMainText(widget._text),
-                        const Text('ثلاث مرات',
-                            style: TextStyle(
-                                fontSize: 20, color: AppColors.lightGreen))
-                      ],
-                    )
-                  else if (widget.isCount)
-                    Column(
-                      children: [
-                        TheMainText(widget._text),
-                        if (widget.timesNumber == 3)
-                          Text(
-                            "ثلاث مرات",
-                            style: CustomTextStyle(),
-                          )
-                        else if (widget.timesNumber == 4)
-                          Text("أربع مرات", style: CustomTextStyle())
-                        else if (widget.timesNumber == 7)
-                          Text("سبع مرات", style: CustomTextStyle())
-                        else if (widget.timesNumber == 100)
-                          Text("مئة مرة", style: CustomTextStyle())
-                        else if (widget.timesNumber == 10)
-                          Text("عشر مرات", style: CustomTextStyle())
-                          else 
-                          Text("رقم غير مسجل", style: CustomTextStyle())
 
-                      ],
+                  // Wrapping the main content in Flexible and SingleChildScrollView
+                  Flexible(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          if (widget.isAya)
+                            Column(
+                              children: [
+                                Text(
+                                  'أعوذ بالله من الشيطان الرجيم',
+                                  style: CustomTextStyle(),
+                                ),
+                                TheMainText(widget._text),
+                              ],
+                            )
+                          else if (widget.isSurah)
+                            Column(
+                              children: [
+                                const Text(
+                                  basmala,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: AppColors.lightGreen,
+                                  ),
+                                ),
+                                TheMainText(widget._text),
+                                const Text(
+                                  'ثلاث مرات',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: AppColors.lightGreen,
+                                  ),
+                                ),
+                              ],
+                            )
+                          else if (widget.isCount)
+                            Column(
+                              children: [
+                                TheMainText(widget._text),
+                                if (widget.timesNumber == 3)
+                                  Text("ثلاث مرات", style: CustomTextStyle())
+                                else if (widget.timesNumber == 4)
+                                  Text("أربع مرات", style: CustomTextStyle())
+                                else if (widget.timesNumber == 7)
+                                  Text("سبع مرات", style: CustomTextStyle())
+                                else if (widget.timesNumber == 100)
+                                  Text("مئة مرة", style: CustomTextStyle())
+                                else if (widget.timesNumber == 10)
+                                  Text("عشر مرات", style: CustomTextStyle())
+                                else if (widget.timesNumber == 33)
+                                  Text("ثلاثا وثلاثين",
+                                      style: CustomTextStyle())
+                                else if (widget.timesNumber == 34)
+                                  Text("أربعا وثلاثين",
+                                      style: CustomTextStyle())
+                              ],
+                            )
+                          else
+                            TheMainText(widget._text),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Reusable lower body section with button
+
+                  if (widget.pageNumber == controller.lastNumber)
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('النهاية',style: TextStyle(color: Color.fromRGBO(207, 231, 222, 1)),),
                     )
-                  else
-                    TheMainText(widget._text),
-                  /////////////////////////////////////////////////
-                  lowerBody(
-                      goToNextPage), // Reusable lower body section with button
+                    else
+                  lowerBody(goToNextPage),
                 ],
               ),
             ),
@@ -105,10 +133,14 @@ class _ScreenState extends State<Screen> {
           ),
           const SizedBox(),
           const SizedBox(),
-          Text(
-            '$pageNumber/4',
-            style: const TextStyle(fontSize: 20),
-          ),
+          GetBuilder<PageviewController>(
+              id: 'MaxZekrNumber',
+              builder: (controller) {
+                return Text(
+                  '$pageNumber/${controller.lastNumber}',
+                  style: const TextStyle(fontSize: 20),
+                );
+              }),
         ],
       ),
     );

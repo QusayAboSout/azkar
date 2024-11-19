@@ -21,29 +21,31 @@ class LargeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(15),
-      child: Material(
-        color: Colors
-            .transparent, // Ensures the InkWell ripple effect works properly
-        child: InkWell(
-          onTap: onTap,
-          child: Ink(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imageUrl as String),
-                fit: BoxFit.cover,
+    return Expanded(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Material(
+          color: Colors
+              .transparent, // Ensures the InkWell ripple effect works properly
+          child: InkWell(
+            onTap: onTap,
+            child: Ink(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageUrl as String),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            width: width,
-            height: height,
-            child: Center(
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontSize:22,
-                  fontWeight: FontWeight.bold,
-                  color: color,
+              width: width,
+              height: height,
+              child: Center(
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontSize:22,
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  ),
                 ),
               ),
             ),

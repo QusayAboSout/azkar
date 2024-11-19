@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:azkar/custom/colors.dart';
 import 'package:azkar/custom/large_button.dart';
 import 'package:azkar/screens/main_azkar/masa.dart';
 import 'package:azkar/screens/main_azkar/sabah.dart';
+import 'package:azkar/screens/main_azkar/sleep.dart';
 import 'package:azkar/screens/main_azkar/wakeup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +26,6 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('أذكاري',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.lightGreen),),
-          
           centerTitle: true,
         ),
         body: GridView.count(
@@ -73,7 +75,7 @@ class Home extends StatelessWidget {
                 color: const Color.fromARGB(216, 238, 238, 238),
                 imageUrl: 'assets/images/sleep.jpg',
                 onTap: (){
-                  print('See you');
+                  Get.to(() => const Sleep());
                 },
               ),
             ),

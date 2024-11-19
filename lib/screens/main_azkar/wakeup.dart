@@ -1,6 +1,9 @@
 import 'package:azkar/Classes/day_and_date.dart';
+import 'package:azkar/controllers/wakup_controller.dart';
 import 'package:azkar/custom/page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran/quran.dart';
 
@@ -12,6 +15,7 @@ class Wakeup extends StatefulWidget {
 
 class _WakeupState extends State<Wakeup> {
   final PageController _pageController = PageController(initialPage: 0);
+  final WakeupController _wakeupController = Get.put(WakeupController());
   @override
   void dispose() {
     _pageController.dispose();
@@ -31,7 +35,12 @@ class _WakeupState extends State<Wakeup> {
           child: Column(
             children: [
               // UPPER Part
-              const UpperPart(),
+              GetBuilder(
+                init: _wakeupController,
+                builder: (context) {
+                  return const UpperPart();
+                }
+              ),
 
               // Main Part
               Expanded(
@@ -44,7 +53,7 @@ class _WakeupState extends State<Wakeup> {
                     Screen(2, _pageController, false, false, false, 0,
                         ' الحمدُ للهِ الذي عافانِى في جَسَدِي ، ورَدَّ عَلَيَّ رُوحِي ، وأَذِنَ لي بذِكْرِه'),
                     Screen(3, _pageController, false, false, false, 0,
-                        'لا إلَهَ إلَّا اللَّهُ وحْدَهُ لا شَرِيكَ له، له المُلْكُ وله الحَمْدُ، وهو علَى كُلِّ شيءٍ قَديرٌ، الحَمْدُ لِلَّهِ، وسُبْحَانَ اللَّهِ، ولَا إلَهَ إلَّا اللَّهُ، واللَّهُ أَكْبَرُ، ولَا حَوْلَ ولَا قُوَّةَ إلَّا باللَّهِ. (ادعي بما تشاء)'),
+                        'لا إلَهَ إلَّا اللَّهُ وحْدَهُ لا شَرِيكَ له، له المُلْكُ وله الحَمْدُ، وهو علَى كُلِّ شيءٍ قَديرٌ،\n الحَمْدُ لِلَّهِ، وسُبْحَانَ اللَّهِ، ولَا إلَهَ إلَّا اللَّهُ، واللَّهُ أَكْبَرُ، ولَا حَوْلَ ولَا قُوَّةَ إلَّا باللَّهِ. (ادعي بما تشاء)'),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ClipRRect(
@@ -101,7 +110,7 @@ class _WakeupState extends State<Wakeup> {
 
   Widget upperBody(int pageNumber) {
     return Container(
-      color: Colors.grey[600],
+      color: const Color.fromARGB(185, 196, 218, 210),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

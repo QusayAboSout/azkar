@@ -1,3 +1,4 @@
+import 'package:azkar/controllers/pageview_controller.dart';
 import 'package:azkar/custom/colors.dart';
 import 'package:azkar/screens/home.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
+  Get.put(PageviewController());
   runApp(const MyApp());
 }
 
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: AppColors.main,
             centerTitle: true,
             titleTextStyle:
-                TextStyle(color: AppColors.Text, fontSize: 30),
+                TextStyle(color: Color.fromARGB(185, 196, 218, 210), fontSize: 30),
           )),
       home: const Home(),
       debugShowCheckedModeBanner: false,
