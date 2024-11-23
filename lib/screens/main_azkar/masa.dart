@@ -1,6 +1,5 @@
 import 'package:azkar/Classes/day_and_date.dart';
 import 'package:azkar/controllers/masa_controller.dart';
-import 'package:azkar/controllers/pageview_controller.dart';
 import 'package:azkar/custom/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +18,6 @@ class _MasaState extends State<Masa> {
   @override
   void dispose() {
     _pageController.dispose();
-    Get.delete<MasaController>();
     super.dispose();
   }
 
@@ -56,7 +54,7 @@ class _MasaState extends State<Masa> {
                           true,
                           false,
                           false,
-                          0,
+                         3,
                           '${getVerse(112, 1)} ${getVerseEndSymbol(1)} ${getVerse(112, 2)} ${getVerseEndSymbol(2)} ${getVerse(112, 3)} ${getVerseEndSymbol(3)} ${getVerse(112, 4)} ${getVerseEndSymbol(4)}',
                         ),
                         Screen(
@@ -65,7 +63,7 @@ class _MasaState extends State<Masa> {
                           true,
                           false,
                           false,
-                          0,
+                          3,
                           '${getVerse(113, 1)} ${getVerseEndSymbol(1)} ${getVerse(113, 2)} ${getVerseEndSymbol(2)} ${getVerse(113, 3)} ${getVerseEndSymbol(3)} ${getVerse(113, 4)} ${getVerseEndSymbol(4)} ${getVerse(113, 5)} ${getVerseEndSymbol(5)}',
                         ),
                         Screen(
@@ -74,7 +72,7 @@ class _MasaState extends State<Masa> {
                           true,
                           false,
                           false,
-                          0,
+                          3,
                           '${getVerse(114, 1)} ${getVerseEndSymbol(1)} ${getVerse(114, 2)} ${getVerseEndSymbol(2)} ${getVerse(114, 3)} ${getVerseEndSymbol(3)} ${getVerse(114, 4)} ${getVerseEndSymbol(4)} ${getVerse(114, 5)} ${getVerseEndSymbol(5)} ${getVerse(114, 6)} ${getVerseEndSymbol(6)}',
                         ),
                         Screen(5, _pageController, false, false, false, 0,

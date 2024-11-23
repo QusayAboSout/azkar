@@ -1,9 +1,9 @@
 import 'package:azkar/Classes/day_and_date.dart';
 import 'package:azkar/controllers/wakup_controller.dart';
+import 'package:azkar/custom/colors.dart';
 import 'package:azkar/custom/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran/quran.dart';
 
@@ -36,11 +36,10 @@ class _WakeupState extends State<Wakeup> {
             children: [
               // UPPER Part
               GetBuilder(
-                init: _wakeupController,
-                builder: (context) {
-                  return const UpperPart();
-                }
-              ),
+                  init: _wakeupController,
+                  builder: (context) {
+                    return const UpperPart();
+                  }),
 
               // Main Part
               Expanded(
@@ -74,15 +73,29 @@ class _WakeupState extends State<Wakeup> {
                                     child: SingleChildScrollView(
                                       child: Padding(
                                         padding: const EdgeInsets.all(20.0),
-                                        child: Text(
-                                          '${getVerseEndSymbol(189)} ${getVerse(3, 190)}${getVerseEndSymbol(190)}${getVerse(3, 191)}${getVerseEndSymbol(191)}${getVerse(3, 192)}${getVerseEndSymbol(192)}${getVerse(3, 193)}${getVerseEndSymbol(193)}${getVerse(3, 194)}${getVerseEndSymbol(194)}${getVerse(3, 195)}${getVerseEndSymbol(195)}${getVerse(3, 196)}${getVerseEndSymbol(196)}${getVerse(3, 197)}${getVerseEndSymbol(197)}${getVerse(3, 198)}${getVerseEndSymbol(198)}${getVerse(3, 199)}${getVerseEndSymbol(199)}${getVerse(3, 200)}${getVerseEndSymbol(200)}',
-                                          style: GoogleFonts.amiri(
-                                              color: Colors.white,
-                                              height: 2,
-                                              textStyle: const TextStyle(
-                                                  fontSize: 28,
-                                                  wordSpacing: 3)),
-                                          textAlign: TextAlign.center,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'أعوذ بالله من الشيطان الرجيم',
+                                              style: GoogleFonts.amiri(
+                                                  textStyle: const TextStyle(
+                                                      color:
+                                                          AppColors.lightGreen,
+                                                      fontSize: 20)),
+                                            ),
+                                            Text(
+                                              '${getVerseEndSymbol(189)} ${getVerse(3, 190)}${getVerseEndSymbol(190)}${getVerse(3, 191)}${getVerseEndSymbol(191)}${getVerse(3, 192)}${getVerseEndSymbol(192)}${getVerse(3, 193)}${getVerseEndSymbol(193)}${getVerse(3, 194)}${getVerseEndSymbol(194)}${getVerse(3, 195)}${getVerseEndSymbol(195)}${getVerse(3, 196)}${getVerseEndSymbol(196)}${getVerse(3, 197)}${getVerseEndSymbol(197)}${getVerse(3, 198)}${getVerseEndSymbol(198)}${getVerse(3, 199)}${getVerseEndSymbol(199)}${getVerse(3, 200)}${getVerseEndSymbol(200)}',
+                                              style: GoogleFonts.amiri(
+                                                  color: Colors.white,
+                                                  height: 2,
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 28,
+                                                      wordSpacing: 3)),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -111,20 +124,23 @@ class _WakeupState extends State<Wakeup> {
   Widget upperBody(int pageNumber) {
     return Container(
       color: const Color.fromARGB(185, 196, 218, 210),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const Icon(
-            Icons.circle_outlined,
-            size: 100,
-          ),
-          const SizedBox(),
-          const SizedBox(),
-          Text(
-            '$pageNumber/4',
-            style: const TextStyle(fontSize: 20),
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const Text(
+              '-/-',
+              style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(),
+            const SizedBox(),
+            Text(
+              '$pageNumber/4',
+              style: const TextStyle(fontSize: 20),
+            ),
+          ],
+        ),
       ),
     );
   }

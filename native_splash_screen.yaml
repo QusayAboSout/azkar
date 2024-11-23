@@ -1,0 +1,23 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "#000000"
+  #background_image: "assets/icons/icon1.png"
+  image: "assets/icons/icon1.png"
+  branding: "assets/icons/icon1.png"
+
+  # If you want to add a dark mode settings to your app
+  #background_image_dark: "assets/.jpg"
+  #image_dark: "assets/.png"
+  #branding_dark: "assets/.png"
+
+  android_12:
+   color: "#000000"
+   image: "assets/icons/icon1.png"
+   branding: "assets/icons/icon1.png"  
+
+  # Add these options to control image size and alignment
+  android_gravity: fill # Options: bottom, center, fill, top, etc.
+  ios_content_mode: scaleAspectFill # Options: center, scaleToFill, scaleAspectFit, scaleAspectFill, etc.

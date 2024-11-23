@@ -3,7 +3,6 @@ import 'package:azkar/custom/colors.dart';
 import 'package:azkar/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {

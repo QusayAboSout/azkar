@@ -36,11 +36,10 @@ class _SabahState extends State<Sabah> {
             children: [
               /// UPPER PART
               GetBuilder(
-                init: _sabahController,
-                builder: (context) {
-                  return const UpperPart();
-                }
-              ),
+                  init: _sabahController,
+                  builder: (context) {
+                    return const UpperPart();
+                  }),
 
               /// Main Part
 
@@ -57,7 +56,7 @@ class _SabahState extends State<Sabah> {
                     true,
                     false,
                     false,
-                    0,
+                    3,
                     '${getVerse(112, 1)} ${getVerseEndSymbol(1)} ${getVerse(112, 2)} ${getVerseEndSymbol(2)} ${getVerse(112, 3)} ${getVerseEndSymbol(3)} ${getVerse(112, 4)} ${getVerseEndSymbol(4)}',
                   ),
                   Screen(
@@ -66,7 +65,7 @@ class _SabahState extends State<Sabah> {
                     true,
                     false,
                     false,
-                    0,
+                    3,
                     '${getVerse(113, 1)} ${getVerseEndSymbol(1)} ${getVerse(113, 2)} ${getVerseEndSymbol(2)} ${getVerse(113, 3)} ${getVerseEndSymbol(3)} ${getVerse(113, 4)} ${getVerseEndSymbol(4)} ${getVerse(113, 5)} ${getVerseEndSymbol(5)}',
                   ),
                   Screen(
@@ -75,7 +74,7 @@ class _SabahState extends State<Sabah> {
                     true,
                     false,
                     false,
-                    0,
+                    3,
                     '${getVerse(114, 1)} ${getVerseEndSymbol(1)} ${getVerse(114, 2)} ${getVerseEndSymbol(2)} ${getVerse(114, 3)} ${getVerseEndSymbol(3)} ${getVerse(114, 4)} ${getVerseEndSymbol(4)} ${getVerse(114, 5)} ${getVerseEndSymbol(5)} ${getVerse(114, 6)} ${getVerseEndSymbol(6)}',
                   ),
                   Screen(5, _pageController, false, false, false, 0,
@@ -105,7 +104,7 @@ class _SabahState extends State<Sabah> {
                   Screen(17, _pageController, false, false, false, 0,
                       'أَصبَحْنا على فِطرةِ الإسلامِ،\n وكَلِمةِ الإخلاصِ،\n ودِينِ نَبيِّنا محمَّدٍ صلَّى اللهُ عليه وسلَّمَ\n وعلى مِلَّةِ أبِينا إبراهيمَ، حَنيفًا مُسلِمًا،\n وما كان مِنَ المُشرِكينَ'),
                   Screen(18, _pageController, false, false, true, 100,
-                      'سبحان\n اللهِ\n \nوبحمدِه'),
+                      'سبحان اللهِ وبحمدِه'),
                   Screen(19, _pageController, false, false, true, 100,
                       'لا إلهَ إلاَّ اللَّه وحْدهُ لاَ شَرِيكَ لهُ،\n لَهُ المُلْكُ، ولَهُ الحمْدُ،\n وَهُو عَلَى كُلِّ شَيءٍ قَدِيرٌ'),
                   Screen(20, _pageController, false, false, true, 3,
