@@ -1,4 +1,3 @@
-
 import 'package:azkar/custom/colors.dart';
 import 'package:azkar/custom/large_button.dart';
 import 'package:azkar/screens/main_azkar/masa.dart';
@@ -8,7 +7,7 @@ import 'package:azkar/screens/main_azkar/wakeup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PagesCount{
+class PagesCount {
   static final PagesCount _instance = PagesCount._internal();
   int maxPages = 0; // Default value
   factory PagesCount() {
@@ -24,7 +23,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('أذكاري',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.lightGreen),),
+          title: const Text(
+            'أذكاري',
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: AppColors.lightGreen),
+          ),
           centerTitle: true,
         ),
         body: GridView.count(
@@ -39,7 +44,7 @@ class Home extends StatelessWidget {
               child: LargeButton(
                 text: 'أذكار الاستيقاظ من النوم',
                 color: const Color.fromARGB(216, 238, 238, 238),
-                imageUrl: './assets/images/wakeup.png',
+                imageUrl: 'assets/images/wakeup.png',
                 onTap: (){
                   Get.to(() => const Wakeup());
                 },
@@ -49,7 +54,7 @@ class Home extends StatelessWidget {
               tag: 'sabah',
                child: LargeButton(
                 text: 'أذكار الصباح',
-                imageUrl: './assets/images/sabah.png',
+                imageUrl: 'assets/images/sabah.png',
                 onTap: (){
                   Get.to(()=> const Sabah());
                 },
@@ -78,6 +83,26 @@ class Home extends StatelessWidget {
                 },
               ),
             ),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Get.to(() => const Wakeup());
+            //     },
+            //     child: const Text('Wakeup')),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Get.to(() => const Sabah());
+            //     },
+            //     child: const Text('Sabah')),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Get.to(() => const Masa());
+            //     },
+            //     child: const Text('Masa')),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Get.to(() => const Sleep());
+            //     },
+            //     child: const Text('Sleep')),
           ],
         ));
   }
