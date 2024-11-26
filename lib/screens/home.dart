@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
               child: LargeButton(
                 text: 'أذكار الاستيقاظ من النوم',
                 color: const Color.fromARGB(216, 238, 238, 238),
-                imageUrl: 'assets/images/wakeup.png',
+                imageUrl: './assets/images/wakeup.png',
                 onTap: (){
                   Get.to(() => const Wakeup());
                 },
@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
               tag: 'sabah',
                child: LargeButton(
                 text: 'أذكار الصباح',
-                imageUrl: 'assets/images/sabah.png',
+                imageUrl: './assets/images/sabah.png',
                 onTap: (){
                   Get.to(()=> const Sabah());
                 },

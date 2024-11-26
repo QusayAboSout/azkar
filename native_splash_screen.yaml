@@ -19,5 +19,5 @@ flutter_native_splash:
    branding: "assets/icons/icon1.png"  
 
   # Add these options to control image size and alignment
-  android_gravity: fill # Options: bottom, center, fill, top, etc.
+  android_gravity: center # Options: bottom, center, fill, top, etc.
   ios_content_mode: scaleAspectFill # Options: center, scaleToFill, scaleAspectFit, scaleAspectFill, etc.
