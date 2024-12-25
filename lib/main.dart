@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       theme: ThemeData.dark(useMaterial3: true),
       darkTheme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromARGB(255, 20, 23, 22),
+          scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColors.main,
             centerTitle: true,

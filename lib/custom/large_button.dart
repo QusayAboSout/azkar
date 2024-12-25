@@ -41,7 +41,8 @@ class LargeButton extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize:22,
+                  fontFamily: 'Cairo',
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: color,
                 ),

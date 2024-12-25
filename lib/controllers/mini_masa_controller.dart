@@ -4,26 +4,21 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:quran/quran.dart';
 
-class MasaController extends GetxController {
+class MiniMasaController extends GetxController {
   final PageviewController pageviewController = Get.find<PageviewController>();
-  // bool fullAzkar = true;
 
-  MasaController() {
+  MiniMasaController() {
     updateMaxAzkarNumber();
     pageviewController.zekrCount = 0;
   }
 
   void updateMaxAzkarNumber() {
-    pageviewController.lastNumber = 23;
+    pageviewController.lastNumber = 17;
   }
 
   void updateZekrCount() {
     pageviewController.zekrCount++;
   }
-
-  // void changeFullAzkar(){
-  //   fullAzkar = !fullAzkar;
-  // }
 
   PageView Data(PageController pageController) {
     return PageView(
@@ -63,38 +58,26 @@ class MasaController extends GetxController {
         Screen(6, pageController, false, false, false, 0,
             'اللهمَّ بك أَمسَيْنا، \nوبك أصبَحْنا\n وبك نحيا،\n وبك نموتُ،\n وإليك النُّشورُ'),
         Screen(7, pageController, false, false, false, 0,
-            'اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك، ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء بذنبي فاغفر لي فإنه لا يغفر الذنوب إلا أنت'),
-        Screen(8, pageController, false, false, true, 4,
-            'اللهم إني أمسيتُ أُشهدكَ\n وأُشهدُ حملةَ عرشك\n وملائكتكَ وجميع خلقك\n أنك أنت الله لا إله إلا انت\n وحدك لا شريك لك\n وأن محمدًا عَبدٌكَ ورسولك'),
-        Screen(9, pageController, false, false, false, 0,
-            'اللَّهُـمَّ مَا أَمْسَى بِي\n مِـنْ نِعْـمَةٍ\n أَوْ بِأَحَـدٍ مِـنْ خَلْـقِكَ،\n فَمِـنْكَ وَحْـدَكَ لاَ شَرِيكَ لَـكَ،\n فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـرُ'),
-        Screen(10, pageController, false, false, true, 3,
             'اللَّهمَّ عافِني في بَدَني،\n اللَّهمَّ عافِني في سَمْعي،\n اللَّهمَّ عافِني في بَصَري،\n لا إلهَ إلَّا أنتَ.\n اللَّهمَّ إنِّي أَعوذُ بكَ منَ الكُفرِ والفَقرِ،\n اللَّهمَّ إنِّي أَعوذُ بِكَ مِن عَذابِ القَبرِ،\n لا إلهَ إلَّا أنتَ'),
-        Screen(11, pageController, false, false, true, 7,
+        Screen(8, pageController, false, false, true, 3,
             'حَسْبِيَ اللَّهُ\n لا إِلَهَ إِلا هُوَ\n عَلَيْهِ تَوَكَّلْتُ\n وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ'),
-        Screen(12, pageController, false, false, false, 0,
-            'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ\n فِي الدُّنْيَا وَالآخِرَةِ،\n اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي،\n اللَّهُمَّ استُرْ عَوْرَاتي، وآمِنْ رَوْعَاتي،\n اللَّهمَّ احْفَظْنِي مِنْ بَينِ يَدَيَّ، ومِنْ خَلْفي، وَعن يَميني، وعن شِمالي، ومِن فَوْقِي، وأعُوذُ بِعَظَمَتِكَ أنْ أُغْتَالَ مِنْ تَحتي'),
-        Screen(13, pageController, false, false, false, 0,
-            'اللَّهُمَّ عَالِمَ الغَيْبِ والشَّهَادَةِ،\n فَاطِرَ السَّموَاتِ والأرْضِ،\n رَبَّ كُلِّ شَيءٍ ومَلِيْكَه\nُ، أشْهَدُ أنْ لا إلَهَ إلاَّ أنْتَ،\n أعُوذُ بِكَ مِنْ شَرِّ نَفْسِي،\n وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ،\n وأنْ أقْتَرِفَ عَلَى نَفْسِي سُوءاً، أوْ أجُرَّهُ إلَى مُسْلِمٍ'),
-        Screen(14, pageController, false, false, true, 3,
+        Screen(9, pageController, false, false, true, 3,
             'بسم الله\n الذي لا يضر\n مع اسمه شيء\n في الأرض\n ولا في السماء\n وهو السميع العليم'),
-        Screen(15, pageController, false, false, true, 3,
-            'رضيت بالله رباً،\n وبالإسلام ديناً،\n وبمحمد صلى الله عليه وسلم نبياً'),
-        Screen(16, pageController, false, false, false, 0,
+        Screen(10, pageController, false, false, false, 0,
             'يا حيّ يا قَيُّومُ برحمتك أستغيثُ،\n أصلحْ لي شأني كلَّه،\n وَلَا تَكِلْنِي إِلَى نفسي طَرْفَةَ عين \n أمسينا وأمسى الملك لله رب العالمين،\n االلهم إني أسألك خير مافي هذا الليلة : فتحها ، ونصرها ، ونورها ، وبركتها ، وهداها وأعوذ بك من شر مافيها وشر ما بعده'),
-        Screen(17, pageController, false, false, false, 0,
+        Screen(11, pageController, false, false, false, 0,
             'أمسينا على فِطرةِ الإسلامِ،\n وكَلِمةِ الإخلاصِ،\n ودِينِ نَبيِّنا محمَّدٍ صلَّى اللهُ عليه وسلَّمَ\n وعلى مِلَّةِ أبِينا إبراهيمَ، حَنيفًا مُسلِمًا،\n وما كان مِنَ المُشرِكينَ'),
         Screen(
-            18, pageController, false, false, true, 100, 'سبحان اللهِ وبحمدِه'),
-        Screen(19, pageController, false, false, true, 3,
+            12, pageController, false, false, true, 10, 'سبحان اللهِ وبحمدِه'),
+        Screen(13, pageController, false, false, true, 3,
             'أعوذُ بكلماتِ الله التاماتِ من شرِّ ما خلقَ'),
-        Screen(20, pageController, false, false, true, 10,
+        Screen(14, pageController, false, false, false, 0,
             'لا إلهَ إلاَّ اللَّه وحْدهُ لاَ شَرِيكَ لهُ،\n لَهُ المُلْكُ، ولَهُ الحمْدُ،\n وَهُو عَلَى كُلِّ شَيءٍ قَدِيرٌ'),
-        Screen(21, pageController, false, false, true, 3,
+        Screen(15, pageController, false, false, true, 3,
             'سُبحانَ اللهِ وبحَمْدِه\n عَدَدَ خَلْقِه،\n ورِضا نَفْسِه،\n وزِنةَ عَرْشِه،\n ومِدادَ كَلِماتِه'),
-        Screen(22, pageController, false, false, false, 0,
+        Screen(16, pageController, false, false, false, 0,
             'اللَّهُمَّ إنِّي أسأَلُك\n عِلْمًا نافعًا\n ورِزْقًا طيِّبًا\n وعَمَلًا مُتقبَّلًا'),
-        Screen(23, pageController, false, false, true, 10,
+        Screen(17, pageController, false, false, false, 0,
             'اللهم صلِّ وسلِّم على نبينا محمد'),
       ],
     );

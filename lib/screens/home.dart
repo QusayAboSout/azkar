@@ -26,9 +26,11 @@ class Home extends StatelessWidget {
           title: const Text(
             'أذكاري',
             style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: AppColors.lightGreen),
+              fontFamily: 'Cairo',
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: AppColors.lightGreen,
+            ),
           ),
           centerTitle: true,
         ),
@@ -45,64 +47,44 @@ class Home extends StatelessWidget {
                 text: 'أذكار الاستيقاظ من النوم',
                 color: const Color.fromARGB(216, 238, 238, 238),
                 imageUrl: 'assets/images/wakeup.png',
-                onTap: (){
+                onTap: () {
                   Get.to(() => const Wakeup());
                 },
               ),
             ),
-             Hero(
+            Hero(
               tag: 'sabah',
-               child: LargeButton(
+              child: LargeButton(
                 text: 'أذكار الصباح',
                 imageUrl: 'assets/images/sabah.png',
-                onTap: (){
-                  Get.to(()=> const Sabah());
+                onTap: () {
+                  Get.to(() => const Sabah());
                 },
                 color: const Color.fromARGB(255, 0, 0, 0),
-                           ),
-             ),
-             Hero(
+              ),
+            ),
+            Hero(
               tag: 'masa',
-               child: LargeButton(
+              child: LargeButton(
                 text: 'أذكار المساء',
                 imageUrl: 'assets/images/masa.png',
-                onTap: (){
+                onTap: () {
                   Get.to(() => const Masa());
                 },
                 color: Colors.black,
-                           ),
-             ),
+              ),
+            ),
             Hero(
               tag: 'sleep',
               child: LargeButton(
                 text: 'أذكار النوم',
                 color: const Color.fromARGB(216, 238, 238, 238),
                 imageUrl: 'assets/images/sleep.jpg',
-                onTap: (){
+                onTap: () {
                   Get.to(() => const Sleep());
                 },
               ),
             ),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Get.to(() => const Wakeup());
-            //     },
-            //     child: const Text('Wakeup')),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Get.to(() => const Sabah());
-            //     },
-            //     child: const Text('Sabah')),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Get.to(() => const Masa());
-            //     },
-            //     child: const Text('Masa')),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Get.to(() => const Sleep());
-            //     },
-            //     child: const Text('Sleep')),
           ],
         ));
   }

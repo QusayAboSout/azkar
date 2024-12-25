@@ -92,13 +92,18 @@ flutter:
   fonts:
     - family: Amiri
       fonts:
-        - asset: assets/fonts/Amiri-Bold.ttf
-        - asset: assets/fonts/Amiri-BoldItalic.ttf
-        - asset: assets/fonts/Amiri-Italic.ttf
-        - asset: assets/fonts/Amiri-Regular.ttf
+        - asset: assets/fonts/Amiri/Amiri-Bold.ttf
+        - asset: assets/fonts/Amiri/Amiri-BoldItalic.ttf
+        - asset: assets/fonts/Amiri/Amiri-Italic.ttf
+        - asset: assets/fonts/Amiri/Amiri-Regular.ttf
     - family: AmiriQuran
       fonts:
-        - asset: assets/fonts/AmiriQuran-Regular.ttf
+        - asset: assets/fonts/Amiri/AmiriQuran-Regular.ttf
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Bold.ttf
+          weight: 700 
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

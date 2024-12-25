@@ -4,15 +4,15 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:quran/quran.dart';
 
-class SleepController extends GetxController {
+class MiniSleepController extends GetxController {
   final PageviewController pageviewController = Get.find<PageviewController>();
-  SleepController() {
+  MiniSleepController() {
     updateMaxAzkarNumber();
     pageviewController.zekrCount = 0;
   }
 
   void updateMaxAzkarNumber() {
-    pageviewController.lastNumber = 20;
+    pageviewController.lastNumber = 18;
   }
 
   void updateZekrCount() {
@@ -68,18 +68,14 @@ class SleepController extends GetxController {
             'اللهم قِنِي عذابَك يوم تبعثُ عبادَك'),
         Screen(12, pageController, false, false, false, 0,
             'اللهمَّ باسمِك أموتُ وأحيا'),
-        Screen(13, pageController, false, false, true, 33, 'سُبْحَانَ اللَّه'),
-        Screen(14, pageController, false, false, true, 33, 'الْحَمْدُ للّه'),
-        Screen(15, pageController, false, false, true, 34, 'اللّه اكبر'),
+        Screen(13, pageController, false, false, false, 0, 'سُبْحَانَ اللَّه'),
+        Screen(14, pageController, false, false, false, 0, 'الْحَمْدُ للّه'),
+        Screen(15, pageController, false, false, false, 0, 'اللّه اكبر'),
         Screen(16, pageController, false, false, false, 0,
             'اللَّهمَّ ربَّ السَّمواتِ السَّبعِ وربَّ العرشِ العظيمِ ربَّنا وربَّ كلِّ شيءٍ أنتَ الظَّاهرُ فليس فوقَكَ شيءٌ وأنتَ الباطنُ فليس دونَكَ شيءٌ مُنزِلَ التَّوراةِ والإنجيلِ والفُرقانِ فالقَ الحَبِّ والنَّوى أعوذُ بكَ مِن شرِّ كلِّ شيءٍ أنتَ آخِذٌ بناصيتِه'),
         Screen(17, pageController, false, false, false, 0,
-            'اللهمّ أنتَ الأوّلُ الذي ليسَ قبلكَ شيء ، وأنتَ الآخرُ الذي ليسَ بعدكَ شيء ، وأنتَ الظاهرُ فليسَ فوقكَ شيء ، وأنت الباطنُ فليسَ دونكَ شيء اقْضِ عنّا الديْنَ وأغنِنا من الفقرِ'),
-        Screen(18, pageController, false, false, false, 0,
             'الحمدُ للهِ الَّذي أطعَمنا وسقانا وكفانا فكم ممَّن لا كافيَ له ولا مُؤويَ'),
-        Screen(19, pageController, false, false, false, 0,
-            'اللَّهُمَّ عَالِمَ الغَيْبِ والشَّهَادَةِ، فَاطِرَ السَّموَاتِ والأرْضِ، رَبَّ كُلِّ شَيءٍ ومَلِيْكَهُ، أشْهَدُ أنْ لا إلَهَ إلاَّ أنْتَ، أعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وأنْ أقْتَرِفَ عَلَى نَفْسِي سُوءاً، أوْ أجُرَّهُ إلَى مُسْلِمٍ'),
-        Screen(20, pageController, false, false, false, 0,
+        Screen(18, pageController, false, false, false, 0,
             'اللَّهُمَّ أسْلَمْتُ وجْهِي إلَيْكَ، وفَوَّضْتُ أمْرِي إلَيْكَ، وأَلْجَأْتُ ظَهْرِي إلَيْكَ، رَغْبَةً ورَهْبَةً إلَيْكَ، لا مَلْجَأَ ولَا مَنْجَا مِنْكَ إلَّا إلَيْكَ، اللَّهُمَّ آمَنْتُ بكِتَابِكَ الذي أنْزَلْتَ، وبِنَبِيِّكَ الذي أرْسَلْتَ'),
       ],
     );

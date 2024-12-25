@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran/quran.dart';
 
-class WakeupController extends GetxController {
+class MiniWakeupController extends GetxController {
   final PageviewController pageviewController = Get.find<PageviewController>();
 
-  WakeupController() {
+  MiniWakeupController() {
     updateMaxAzkarNumber();
     pageviewController.zekrCount = 0;
   }
@@ -84,8 +84,7 @@ class WakeupController extends GetxController {
                                 Text(
                                   '${getVerseEndSymbol(189)} ${getVerse(3, 190)}${getVerseEndSymbol(190)}${getVerse(3, 191)}${getVerseEndSymbol(191)}${getVerse(3, 192)}${getVerseEndSymbol(192)}${getVerse(3, 193)}${getVerseEndSymbol(193)}${getVerse(3, 194)}${getVerseEndSymbol(194)}${getVerse(3, 195)}${getVerseEndSymbol(195)}${getVerse(3, 196)}${getVerseEndSymbol(196)}${getVerse(3, 197)}${getVerseEndSymbol(197)}${getVerse(3, 198)}${getVerseEndSymbol(198)}${getVerse(3, 199)}${getVerseEndSymbol(199)}${getVerse(3, 200)}${getVerseEndSymbol(200)}',
                                   style: GoogleFonts.amiriQuran(
-                                      decorationColor: Colors.white,
-                                      color: Colors.white,
+                                      color: const Color.fromARGB(255, 0, 0, 0),
                                       height: 2,
                                       textStyle: const TextStyle(
                                           fontSize: 28, wordSpacing: 3)),

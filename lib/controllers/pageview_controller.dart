@@ -9,7 +9,6 @@ class PageviewController extends GetxController {
     update(['MaxZekrNumber']);
   }
 
-
   void updateZekrCount(){
     zekrCount++;
     update(['ZekrCount']);
